@@ -1,0 +1,30 @@
+[
+  {
+    "roomNumber": "Room 1",
+    "vacant": false,
+    "guestName": "Eminem",
+    "guestSurname": ""
+  },
+  {
+    "roomNumber": "Room 2",
+    "vacant": false,
+    "guestName": "Tom",
+    "guestSurname": "Hanks"
+  },
+  {
+    "roomNumber": "Room 3",
+    "vacant": false,
+    "guestName": "Kylie",
+    "guestSurname": "West"
+  },
+  {
+    "roomNumber": "Room 4",
+    "vacant": false,
+    "guestName": "Brad",
+    "guestSurname": "Pitt"
+  },
+  {
+    "roomNumber": "Room 5",
+    "vacant": true
+  }
+]

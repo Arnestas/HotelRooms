@@ -1,0 +1,22 @@
+[
+  {
+    "roomNumber": 4,
+    "guestName": "Brad",
+    "guestSurname": "Pitt"
+  },
+  {
+    "roomNumber": 1,
+    "guestName": "Tom",
+    "guestSurname": "Man"
+  },
+  {
+    "roomNumber": 1,
+    "guestName": "Santa",
+    "guestSurname": "Barbara"
+  },
+  {
+    "roomNumber": 1,
+    "guestName": "Slim",
+    "guestSurname": "Shady"
+  }
+]
