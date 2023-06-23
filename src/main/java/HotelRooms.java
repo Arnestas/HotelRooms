@@ -4,6 +4,12 @@ import dao.Room;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The main class of the program. It serves as the entry point for the application and contains the main method
+ * that is executed when the program starts.
+ * This class initializes the necessary objects and coordinates the execution of different actions,
+ * such as guest registration, check-out, room occupancy review, and room history review.
+ */
 public class HotelRooms {
     public static void main(String[] args) {
 

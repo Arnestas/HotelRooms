@@ -18,6 +18,10 @@ public class WriteReadFile {
     final String HISTORY_FILE_ADDRESS = "src/main/resources/history.json";
     final String ROOM_OCCUPANCY_FILE_ADDRESS = "src/main/resources/room_occupancy.json";
 
+    /**
+     * Saves a list of guests who were visited the hotel.
+     * @param data A list of guests to save to file.
+     */
     public void saveHistory(List<Guest> data){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         LOGGER.info("This is an informational message");
@@ -29,6 +33,10 @@ public class WriteReadFile {
         }
     }
 
+    /**
+     * Saves a list of all rooms and current guests on them.
+     * @param data A list of rooms to save to file.
+     */
     public void saveOccupancy(List<Room> data){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try(FileWriter writer = new FileWriter(ROOM_OCCUPANCY_FILE_ADDRESS)) {
@@ -39,6 +47,10 @@ public class WriteReadFile {
         }
     }
 
+    /**
+     * Reads/loads data of guests from a file.
+     * @return A list of visitors.
+     */
     public List<Guest> readGuestsHistory(){
         Gson gson = new Gson();
         try(Reader data = new FileReader(HISTORY_FILE_ADDRESS)){
@@ -52,6 +64,10 @@ public class WriteReadFile {
         }
     }
 
+    /**
+     * Reads/loads data of rooms from a file.
+     * @return A list of rooms.
+     */
     public List<Room> readRoomOccupancy(){
         Gson gson = new Gson();
         try(Reader data = new FileReader(ROOM_OCCUPANCY_FILE_ADDRESS)){

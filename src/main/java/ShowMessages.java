@@ -4,6 +4,9 @@ import java.util.List;
 
 public class ShowMessages {
 
+    /**
+     * Prints welcome message and describes the program.
+     */
     public void showWelcomeMessage() {
         System.out.println("\nWelcome!");
         System.out.println("This program helps to register guests in a hotel!");
@@ -11,10 +14,16 @@ public class ShowMessages {
         System.out.println("No more than one guest lives in one hotel room.");
     }
 
+    /**
+     * Prints bye message.
+     */
     public void showByeMessage() {
         System.out.println("\nBye! We hope to see you again in the near future.");
     }
 
+    /**
+     * Prints a menu - possible actions.
+     */
     public void showActions(){
         System.out.println("\nSelect the action by entering the number:");
         System.out.println("1 - Guest registration,");
@@ -24,10 +33,11 @@ public class ShowMessages {
         System.out.println("0 - Exit the program and save data to files.");
     }
 
-    public void enterRoomNumber(){
-        System.out.println("Enter the room number: ");
-    }
-
+    /**
+     * Prints the list of previous guests in a specific room.
+     * @param guests The list of guests to be searched.
+     * @param roomNumber The room number for which the previous guests are displayed.
+     */
     public void showGuests(List<Guest> guests, int roomNumber){
         System.out.printf("Previous guests in Room %s:\n", roomNumber);
         for(Guest guest : guests){

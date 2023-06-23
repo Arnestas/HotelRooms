@@ -10,24 +10,44 @@ public class Actions {
     private List<Guest> guests;
     private List<Room> rooms;
 
+    /**
+     * Constructs an instance of the Actions class with the provided lists of rooms and guests.
+     * @param rooms The list of rooms in the hotel.
+     * @param guests The list of guests who where staying in the hotel.
+     */
     public Actions(List<Room> rooms, List<Guest> guests){
         this.rooms = rooms;
         this.guests = guests;
     }
 
+    /**
+     * Checks if there is at least one room that is currently vacant.
+     * @return True if there is at least one vacant room, false otherwise.
+     */
     public boolean roomIsVacant(){
         return roomManager.roomIsVacant(rooms);
     }
 
+    /**
+     * Checks if there is at least one occupied room.
+     * @return True if there is at least one occupied room, false otherwise.
+     */
     public boolean roomIsOccupied(){
         return roomManager.roomIsOccupied(rooms);
     }
 
+    /**
+     * Checks if specific room had guests before.
+     * @param roomNumber The number of the room to check.
+     * @return True if the room had guests before, false otherwise.
+     */
     public boolean roomHadGuests(int roomNumber){
         return roomManager.roomHadGuests(guests, roomNumber);
     }
 
-    // 1 - Guest registration,
+    /**
+     * Registers guest to the room, makes the room occupied.
+     */
     public void registration(){
         String name = input.inputString("Enter the name of the guest:");
         String surname = input.inputString("Enter the surname:");
@@ -43,10 +63,11 @@ public class Actions {
         }
     }
 
-    // 2 - Check-out the guest
+    /**
+     * Check out's the guest from the room.
+     */
     public void checkOut(){
-        showMessages.enterRoomNumber();
-        int roomNumber = input.inputInt();
+        int roomNumber = roomManager.enterRoomNumber(rooms.size());
         if(rooms.get(roomNumber-1).isVacant()){
             System.out.println("There are no guests in this room. Please, check the room number and try again.");
         } else{
@@ -59,7 +80,9 @@ public class Actions {
         }
     }
 
-    // 3 - Room occupancy review
+    /**
+     * Prints the list of occupied rooms and their guests.
+     */
     public void roomOccupancyReview(){
         if(roomIsOccupied()){
             System.out.println("The list of occupied rooms: ");
@@ -75,10 +98,11 @@ public class Actions {
         }
     }
 
-    // 4 - History and status of the room.
+    /**
+     * Prints the list of all guests who were stayed in a specific room.
+     */
     public void roomHistoryReview(){
-        showMessages.enterRoomNumber();
-        int roomNumber = input.inputInt();
+        int roomNumber = roomManager.enterRoomNumber(rooms.size());
 
         if (rooms.get(roomNumber-1).isVacant()){
             System.out.printf("Room %s is vacant.\n", roomNumber);
